@@ -28,9 +28,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- SCRIPTS FOR RECORD COLLECTION -->
-  <script src="/scripts/js/vinyl-motion.js"></script> 
-  <script src="/scripts/js/gallery.classic.min.js"></script>
+  <script type= "text/javascript" src="/scripts/js/jquery.js"></script> 
+  <script type="text/javascript" src="/scripts/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/scripts/js/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="/scripts/js/galleria-1.4.2.min.js"></script>
+  <script type="text/javascript" src="/scripts/js/vinyl-motion.js"></script> 
+  <!--<script type="text/javascript" src="/scripts/js/galleria.classic.min.js"></script> -->
+  <script type="text/javascript" src="/scripts/js/raphael-min.js"></script>
+  <script type="text/javascript" src="/scripts/js/modernizr-2.5.3.min.js"></script>
+  <script type="text/javscript" src="/scripts/js/johnpeel.js"></script>
+  <script type="text/javascript" src="/data/bowie-test.js"></script>
 </head>
+<script>
+function trackMouseMovement() {
+  const boxNav7 = document.getElementById("boxNav7");
+  const outputField = document.getElementById("outputCoordinates"); 
+
+  boxNav7.addEventListener("mousemove", (event) => {
+    const rect = boxNav7.getBoundingClientRect();
+    const x = Math.floor((event.clientX - rect.left)); // Snap to nearest 10 pixels
+    const y = Math.floor((event.clientY - rect.top)); 
+
+
+    outputField.value = `(${x}, ${y})`; 
+  });
+}
+
+//Call the function and start tracking
+
+
+</script>
+
 
 <body>
   <!-- HEADER -->
@@ -80,7 +108,7 @@
           <img class = "img-utsa" src="images/UTSA.jpeg" alt="University" >
         </div>
         <div class = "class= col-lg-10 col-md-9 col-s-8 col-xs-7 order-lg-1 order-md-1 order-s-1 order-xs-1">
-          <p class = "lead" id = "education-text">Hello, welcome to my website. I'm former graduate and proud alumni from The <a href="https://www.utsa.edu/" target="_blank">University of Texas at San Antonio</a> where I studied Business, Communication and Psychology. Alongside these formal studies, my passion for technology has led me to                 amount a proficient skillset developing web applications as a medium outlet for creative projects. Recent commercial development experience has motivated me to seek                out further experience in both industry and freelance opportunities.
+          <p class = "lead" id = "education-text">Hello, welcome to my website. I'm a former graduate and proud alumni from The <a href="https://www.utsa.edu/" target="_blank">University of Texas at San Antonio</a> where I studied Business, Communication and Psychology. Alongside these formal studies, my passion for technology has led me to                 amount a proficient skillset developing web applications as a medium outlet for creative projects. Recent commercial development experience has motivated me to seek                out further experience in both industry and freelance opportunities.
           </p>
         </div>
       </div>
@@ -93,7 +121,27 @@
     	<div class = "clearfix">
     	</div>
     	<h2 class = "section-heading">Experience</h2>
-            <div class = "row">
+      <div class = "row">
+        <div class = "col-lg-2 col-md-3 col-s-4 col-xs-5 order-lg-1 order-md-1 order-s-1 order-xs-1">
+            <img  class = "img-angular" src = "images/fbm-logo.png">
+          </div>
+          <div class = "col-lg-10 col-md-9 col-s-8 col-xs-7 order-lg-2 order-md-2 order-s-2 order-xs-2" >
+            <p class = "lead" id="coursera"> <b> Frontend Engineer </b>| Funnel Boost Media</p>
+            <p class = "lead"> Sept. 2022 to Oct. 2024 </p>
+            <p class = "lead" id = "work-text"> This most recent experience placed 
+              me on a fast paced team of developers solving problems and building out 
+              projects for an agency serving 90+ clients. My web development skills were 
+              challenged not only to configure PHP 8 Servers, and proficiently build out end to end, 
+              tested WordPress sites; but also execute agile feature rollouts using HTML/CSS PHP/JS 
+              in Wordpress Core files, numerous Wordpress plugin files, and Shopify Liquid theme files. 
+              I was continuously learning in this role, pivoting between troubleshooting server resource 
+              problems, plugin conflicts, and agile website edits – utilizing a diversity of web development 
+              skills among UI/UX and contributing to ongoing code contributions to internal company projects 
+              using ReactJS.
+              </p>
+          </div>
+      </div>
+      <div class = "row">
         <div class = "col-lg-2 col-md-3 col-s-4 col-xs-5 order-lg-1 order-md-1 order-s-1 order-xs-1">
             <img  class = "img-angular" src = "images/jh-angular.png">
           </div>
@@ -165,87 +213,52 @@
 				<p class = "lead" id = "projects-text">Structured web pages with HTML5, CSS3, Bootstrap 4 framework for responsiveness and usage of Cross Origin Resource Sharing (CORS)             with Ajax for faster and dynamic loading of menu and home page content.  <!-- <br> Check out my GitHub for the code repository: <a                href="https://github.com/BandersnatchBoy" target="_blank"><i class="fab fa-github-square"></i> GITHUB</a></p> --> </p>
 			 </div>
 		  </div>
+		  <div class = "row">
+        <div class= "col-lg-2 col-md-3 col-s-4 col-xs-5 order-lg-2 order-md-2 order-s-2 order-xs-2">
+          <img class = "img-chu" src = "images/audiophile-box.png" alt>
+        </div>
+        <div class="col-lg-10 col-md-9 col-s-8 col-xs-7 order-lg-1 order-md-1 order-s-1 order-xs-1">
+         <p class ="lead" id = "david-chu">
+         <b> Audiophile Demo </b></p>
+         <p class = "lead" id = "projects-text"> Serving as the introduction of a larger idea, below is a demonstration of a classic music collection experience 
+          transplanted to a modern medium. Due for further updates, this demonstration appears on this website through 57 real 
+          record collection image elements dynamically stacked using jQuery DOM manipulation. More jQuery is used to AJAX request the data responsible for giving each record
+          unqique file names and y-coordinates which is then interpolated into calculations performed with JavaScript real time mouse tracking.
+          It behooves me to further note that a bug ridden friction prevent rapidly shuffling down the record box upon your first shuffle through, but please enjoy! 
+          <br><br>"I don't know where I'm going from here, but I promise it won't be boring" - David Bowie
+         </p>
+        </div>
+       </div> 
     </div>
   </section>
   <!-- COLLECTIONS -->
-  <section id = "experience" style="display:none;">
+  <section id = "experience">
     <div class= "container">
     	<hr class = "section-heading-spacer">
     	<div class = "clearfix">
     	</div>
     	<h2 class = "section-heading">Collections</h2>
         <div class = "row">
-        <div class = "col-lg-2 col-md-3 col-s-4 col-xs-5 order-lg-1 order-md-1 order-s-1 order-xs-1">
-            <img  class = "img-angular" src = "images/jh-angular.png">
+          <div class = "col-lg-2 col-md-3 col-s-4 col-xs-5 order-lg-1 order-md-1 order-s-1 order-xs-1">
+            <img  class = "img-angular" src = "images/record-img.png">
           </div>
-          <div class = "col-lg-10 col-md-9 col-s-8 col-xs-7 order-lg-2 order-md-2 order-s-2 order-xs-2" >
-            <p class = "lead" id="coursera"> <b> Archive </b>| Vinyl </p>
-            <p class = "lead"> Jul. 2021 to Aug. 2021 </p>
-            <div id="boxContainer7">
-            <div id="boxNav7">
-              <div id="navFrame" style="top: 335px;">
-              </div>
-              <img id="BOWIE_7_57nav" src="images/bowie-img/BOWIE_7_57.png" class="nav7Img">
-              <img id="BOWIE_7_56nav" src="images/bowie-img/BOWIE_7_56.png" class="nav7Img">
-              <img id="BOWIE_7_55nav" src="images/bowie-img/BOWIE_7_55.png" class="nav7Img">
-              <img id="BOWIE_7_54nav" src="images/bowie-img/BOWIE_7_54.png" class="nav7Img">
-              <img id="BOWIE_7_53nav" src="images/bowie-img/BOWIE_7_53.png" class="nav7Img">
-              <img id="BOWIE_7_52nav" src="images/bowie-img/BOWIE_7_52.png" class="nav7Img">
-              <img id="BOWIE_7_51nav" src="images/bowie-img/BOWIE_7_51.png" class="nav7Img">
-              <img id="BOWIE_7_50nav" src="images/bowie-img/BOWIE_7_50.png" class="nav7Img">
-              <img id="BOWIE_7_49nav" src="images/bowie-img/BOWIE_7_49.png" class="nav7Img">
-              <img id="BOWIE_7_48nav" src="images/bowie-img/BOWIE_7_48.png" class="nav7Img">
-              <img id="BOWIE_7_47nav" src="images/bowie-img/BOWIE_7_47.png" class="nav7Img">
-              <img id="BOWIE_7_46nav" src="images/bowie-img/BOWIE_7_46.png" class="nav7Img">
-              <img id="BOWIE_7_45nav" src="images/bowie-img/BOWIE_7_45.png" class="nav7Img">
-              <img id="BOWIE_7_44nav" src="images/bowie-img/BOWIE_7_44.png" class="nav7Img">
-              <img id="BOWIE_7_43nav" src="images/bowie-img/BOWIE_7_43.png" class="nav7Img">
-              <img id="BOWIE_7_42nav" src="images/bowie-img/BOWIE_7_42.png" class="nav7Img">
-              <img id="BOWIE_7_41nav" src="images/bowie-img/BOWIE_7_41.png" class="nav7Img">
-              <img id="BOWIE_7_40nav" src="images/bowie-img/BOWIE_7_40.png" class="nav7Img">
-              <img id="BOWIE_7_39nav" src="images/bowie-img/BOWIE_7_39.png" class="nav7Img">
-              <img id="BOWIE_7_38nav" src="images/bowie-img/BOWIE_7_38.png" class="nav7Img">
-              <img id="BOWIE_7_37nav" src="images/bowie-img/BOWIE_7_37.png" class="nav7Img">
-              <img id="BOWIE_7_36nav" src="images/bowie-img/BOWIE_7_36.png" class="nav7Img">
-              <img id="BOWIE_7_35nav" src="images/bowie-img/BOWIE_7_35.png" class="nav7Img">
-              <img id="BOWIE_7_34nav" src="images/bowie-img/BOWIE_7_34.png" class="nav7Img">
-              <img id="BOWIE_7_33nav" src="images/bowie-img/BOWIE_7_33.png" class="nav7Img">
-              <img id="BOWIE_7_32nav" src="images/bowie-img/BOWIE_7_32.png" class="nav7Img">
-              <img id="BOWIE_7_31nav" src="images/bowie-img/BOWIE_7_31.png" class="nav7Img">
-              <img id="BOWIE_7_30nav" src="images/bowie-img/BOWIE_7_30.png" class="nav7Img">
-              <img id="BOWIE_7_29nav" src="images/bowie-img/BOWIE_7_29.png" class="nav7Img">
-              <img id="BOWIE_7_28nav" src="images/bowie-img/BOWIE_7_28.png" class="nav7Img">
-              <img id="BOWIE_7_27nav" src="images/bowie-img/BOWIE_7_27.png" class="nav7Img">
-              <img id="BOWIE_7_26nav" src="images/bowie-img/BOWIE_7_26.png" class="nav7Img">
-              <img id="BOWIE_7_25nav" src="images/bowie-img/BOWIE_7_25.png" class="nav7Img">
-              <img id="BOWIE_7_24nav" src="images/bowie-img/BOWIE_7_24.png" class="nav7Img">
-              <img id="BOWIE_7_23nav" src="images/bowie-img/BOWIE_7_23.png" class="nav7Img">
-              <img id="BOWIE_7_22nav" src="images/bowie-img/BOWIE_7_22.png" class="nav7Img">
-              <img id="BOWIE_7_21nav" src="images/bowie-img/BOWIE_7_21.png" class="nav7Img">
-              <img id="BOWIE_7_20nav" src="images/bowie-img/BOWIE_7_20.png" class="nav7Img">
-              <img id="BOWIE_7_19nav" src="images/bowie-img/BOWIE_7_19.png" class="nav7Img">
-              <img id="BOWIE_7_18nav" src="images/bowie-img/BOWIE_7_18.png" class="nav7Img">
-              <img id="BOWIE_7_17nav" src="images/bowie-img/BOWIE_7_17.png" class="nav7Img">
-              <img id="BOWIE_7_16nav" src="images/bowie-img/BOWIE_7_16.png" class="nav7Img">
-              <img id="BOWIE_7_15nav" src="images/bowie-img/BOWIE_7_15.png" class="nav7Img">
-              <img id="BOWIE_7_14nav" src="images/bowie-img/BOWIE_7_14.png" class="nav7Img">
-              <img id="BOWIE_7_13nav" src="images/bowie-img/BOWIE_7_13.png" class="nav7Img">
-              <img id="BOWIE_7_12nav" src="images/bowie-img/BOWIE_7_12.png" class="nav7Img">
-              <img id="BOWIE_7_11nav" src="images/bowie-img/BOWIE_7_11.png" class="nav7Img">
-              <img id="BOWIE_7_10nav" src="images/bowie-img/BOWIE_7_10.png" class="nav7Img">
-              <img id="BOWIE_7_9nav" src="images/bowie-img/BOWIE_7_9.png" class="nav7Img">
-              <img id="BOWIE_7_8nav" src="images/bowie-img/BOWIE_7_8.png" class="nav7Img">
-              <img id="BOWIE_7_7nav" src="images/bowie-img/BOWIE_7_7.png" class="nav7Img">
-              <img id="BOWIE_7_6nav" src="images/bowie-img/BOWIE_7_6.png" class="nav7Img">
-              <img id="BOWIE_7_5nav" src="images/bowie-img/BOWIE_7_5.png" class="nav7Img">
-              <img id="BOWIE_7_4nav" src="images/bowie-img/BOWIE_7_4.png" class="nav7Img">
-              <img id="BOWIE_7_3nav" src="images/bowie-img/BOWIE_7_3.png" class="nav7Img">
-              <img id="BOWIE_7_2nav" src="images/bowie-img/BOWIE_7_2.png" class="nav7Img">
-              <img id="BOWIE_7_1nav" src="images/bowie-img/BOWIE_7_1.png" class="nav7Img">
-            </div>
+          <div class = "col-lg-5 col-md-9 col-s-8 col-xs-7 order-lg-2 order-md-2 order-s-2 order-xs-2" >
+            <p class = "lead" id="coursera"> <b> Audio </b>| File </p>
+            <p class = "lead"> Dec. 2024 to Jan. 2025 </p>
+            <div class="boxContainer7">
+            <div id="boxNav7">  
             </div>
           </div>
+          </div>
+
+          <!-- On page mouse coordinate reads for testing purposes
+          <div class="col-lg-5 order-lg-3">
+            <input type="text" id="outputCoordinates" disabled>
+            <input type="text" id="outputmYCoordinates" disabled>
+            </div> -->
+
         </div>
+    </div>
   </section>
   <!-- FOOTER -->
   <aside class = "banner" id = "connect">
@@ -254,7 +267,7 @@
 			 <div class = "footer-social">
 				<ul class = "banner-social-buttons">
 					<li class = "list-inline-items">
-						<a href="mailto:j0shescalante3@gmail.com" class="btn btn-secondary btn-lg">
+						<a href="mailto:j0shescalant3@gmail.com" class="btn btn-secondary btn-lg">
 							<i class = "fa fa-envelope-o fa-fw">
 							</i>
 							<span class = "network-name">j0shescalant3@gmail.com</span>
@@ -294,4 +307,6 @@
 	  </div>
   </aside>
   </body>
+  <!-- (X,Y) On screen tracker for testing purposes
+  <script>trackMouseMovement();</script> -->
 </html>

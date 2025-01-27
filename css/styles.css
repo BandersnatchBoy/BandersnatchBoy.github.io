@@ -197,11 +197,11 @@ a {
     display: none;
   }
 }
-.nav7img{
+.nav7Img{
   width: 315px;
   height: 600px;
   position: absolute;
-  top: 0;
+  /*top: 0; deviation from origional code */
   left: 0;
   z-index: 15;
 }
@@ -218,5 +218,15 @@ a {
     margin: 0;
     border: 0;
     padding: 0;
+}
+#boxNav7{
+  /*position: absolute; */
+  top: 27px;
+  left: 10px;
+  width: 315px;
+  height: 600px;
+  background-image: url("../images/john-peel-asset.png");
+  z-index: 11;
+
 }
 

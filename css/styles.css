@@ -47,6 +47,13 @@ a {
   border-bottom: 1px solid #e7e7e7;
   background-color: #f8f8f8;
 }
+#collections{
+  padding-top: 50px;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #f8f8f8;
+}
+
 #lr , #coursera{
   font-size: 25px;
   margin: 0;
@@ -228,5 +235,10 @@ a {
   background-image: url("../images/john-peel-asset.png");
   z-index: 11;
 
+}
+@media (max-width: 768px){
+  #collections{
+    display:none;
+  }
 }
 
